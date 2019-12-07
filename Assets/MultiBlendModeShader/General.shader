@@ -53,7 +53,8 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _Cutoff;
+            half _Cutoff;
+            half4 _TintColor;
 
             v2f vert (appdata v)
             {
@@ -74,6 +75,8 @@
                     clip(col.a - _Cutoff);
                 }
                 #endif
+
+                col *= _TintColor;
 
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
