@@ -10,7 +10,7 @@ public class GeneralShaderGUI : ShaderGUI
     /// <summary>
     /// ブレンドモード
     /// </summary>
-    public enum BlendMode
+    enum BlendMode
     {
         Opaque,
         Cutout,
@@ -137,7 +137,7 @@ public class GeneralShaderGUI : ShaderGUI
     {
         base.AssignNewShaderToMaterial(material, oldShader, newShader);
 
-        // MaterialのShader切り替え時にBlend指定が変更されてしまうので再設定
+        // MaterialのShader切り替え時にBlend指定が変更されてしまうので再設定します。
         ApplyBlendMode(material, (BlendMode) material.GetFloat("_BlendMode"));
     }
 }
