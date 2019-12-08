@@ -20,6 +20,24 @@ public class GeneralShaderGUI : ShaderGUI
     }
 
     /// <summary>
+    /// インスペクタを拡張します
+    /// </summary>
+    /// <param name="materialEditor">MaterialEditor</param>
+    /// <param name="properties">Properties</param>
+    public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
+    {
+        DrawBlendMode(materialEditor, properties);
+
+        var mainTex = FindProperty("_MainTex", properties);
+        materialEditor.ShaderProperty(mainTex, mainTex.displayName);
+
+        var tintColor = FindProperty("_TintColor", properties);
+        materialEditor.ShaderProperty(tintColor, tintColor.displayName);
+
+        materialEditor.RenderQueueField();
+    }
+
+    /// <summary>
     /// BlendModeのインスペクタを描画します
     /// </summary>
     /// <param name="materialEditor">MaterialEditor</param>
@@ -48,24 +66,6 @@ public class GeneralShaderGUI : ShaderGUI
         {
             materialEditor.ShaderProperty(cutoff, cutoff.displayName);
         }
-    }
-
-    /// <summary>
-    /// インスペクタを拡張します
-    /// </summary>
-    /// <param name="materialEditor">MaterialEditor</param>
-    /// <param name="properties">Properties</param>
-    public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
-    {
-        DrawBlendMode(materialEditor, properties);
-
-        var mainTex = FindProperty("_MainTex", properties);
-        materialEditor.ShaderProperty(mainTex, mainTex.displayName);
-
-        var tintColor = FindProperty("_TintColor", properties);
-        materialEditor.ShaderProperty(tintColor, tintColor.displayName);
-
-        materialEditor.RenderQueueField();
     }
 
     /// <summary>

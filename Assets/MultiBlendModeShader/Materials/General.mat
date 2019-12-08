@@ -59,7 +59,7 @@ Material:
     - _ALPHA_TRANSPARENCY: 1
     - _BlendMode: 0
     - _BumpScale: 1
-    - _Cutoff: 0.562
+    - _Cutoff: 0.66
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
