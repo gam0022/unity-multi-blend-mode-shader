@@ -11,6 +11,9 @@
         // Cutoutの閾値
         _Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
 
+        // カリングモード
+        [Enum(UnityEngine.Rendering.CullMode)] _CullMode("Cull Mode", Float) = 2// Back
+
         // メインテクスチャ
         _MainTex ("Texture", 2D) = "white" {}
 
@@ -26,7 +29,7 @@
         {
             Blend[_SrcBlend][_DstBlend]
             ZWrite [_ZWrite]
-            Cull Back
+            Cull [_CullMode]
 
             CGPROGRAM
             #pragma vertex vert

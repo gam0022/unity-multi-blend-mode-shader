@@ -34,6 +34,9 @@ public class GeneralShaderGUI : ShaderGUI
         var tintColor = FindProperty("_TintColor", properties);
         materialEditor.ShaderProperty(tintColor, tintColor.displayName);
 
+        var cullMode = FindProperty("_CullMode", properties);
+        materialEditor.ShaderProperty(cullMode, cullMode.displayName);
+
         materialEditor.RenderQueueField();
     }
 
