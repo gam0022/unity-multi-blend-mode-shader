@@ -37,6 +37,18 @@ public class GeneralShaderGUI : ShaderGUI
         var cullMode = FindProperty("_CullMode", properties);
         materialEditor.ShaderProperty(cullMode, cullMode.displayName);
 
+        var stencilRef = FindProperty("_StencilRef", properties);
+        materialEditor.ShaderProperty(stencilRef, stencilRef.displayName);
+
+        var stencilComp = FindProperty("_StencilComp", properties);
+        materialEditor.ShaderProperty(stencilComp, stencilComp.displayName);
+
+        var stencilPassOp = FindProperty("_StencilPassOp", properties);
+        materialEditor.ShaderProperty(stencilPassOp, stencilPassOp.displayName);
+
+        var stencilZFailOp = FindProperty("_StencilZFailOp", properties);
+        materialEditor.ShaderProperty(stencilZFailOp, stencilZFailOp.displayName);
+
         materialEditor.RenderQueueField();
     }
 

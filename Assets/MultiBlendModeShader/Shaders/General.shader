@@ -14,6 +14,13 @@
         // カリングモード
         [Enum(UnityEngine.Rendering.CullMode)] _CullMode("Cull Mode", Float) = 2// Back
 
+        // ステンシル
+        [Header(Stencil)]
+        _StencilRef("Stencil Ref", Range(0, 255)) = 0
+        [Enum(UnityEngine.Rendering.CompareFunction)] _StencilComp("Stencil Comp", Float) = 8// ALways
+        [Enum(UnityEngine.Rendering.StencilOp)] _StencilPassOp("Stencil Pass Op", Float) = 0// Keep
+        [Enum(UnityEngine.Rendering.StencilOp)] _StencilZFailOp("Stencil ZFail Op", Float) = 0// Keep
+
         // メインテクスチャ
         _MainTex ("Texture", 2D) = "white" {}
 
@@ -30,6 +37,14 @@
             Blend[_SrcBlend][_DstBlend]
             ZWrite [_ZWrite]
             Cull [_CullMode]
+
+            Stencil
+            {
+                Ref [_StencilRef]
+                Comp [_StencilComp]
+                Pass [_StencilPassOp]
+                ZFail [_StencilZFailOp]
+            }
 
             CGPROGRAM
             #pragma vertex vert
