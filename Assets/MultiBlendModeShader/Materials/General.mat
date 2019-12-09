@@ -29,6 +29,10 @@ Material:
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _SrcBlend: 1
+    - _StencilComp: 8
+    - _StencilPassOp: 0
+    - _StencilRef: 0
+    - _StencilZFailOp: 0
     - _ZWrite: 1
     m_Colors:
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
